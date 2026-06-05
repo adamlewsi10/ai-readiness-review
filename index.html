@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Readiness Review (Free) | BBD Boom</title>
+  <meta name="description" content="A free, online AI Readiness Review from BBD Boom. See where your process, data and HubSpot stack really stand before you invest in AI. HubSpot Elite Partner.">
+
+  <meta property="og:title" content="AI Readiness Review (Free) | BBD Boom">
+  <meta property="og:description" content="A free, online review of your process, data and HubSpot stack. An honest answer on whether you're ready for AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://readiness.bbdboom.com/">
+  <meta property="og:image" content="https://readiness.bbdboom.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Readiness Review (Free) | BBD Boom">
+  <meta name="twitter:description" content="A free, online review of your process, data and HubSpot stack. An honest answer on whether you're ready for AI.">
+
+  <link rel="icon" href="https://www.bbdboom.com/hubfs/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #1F3864;
+      --navy-deep: #16284A;
+      --blue: #2E75B6;
+      --blue-hover: #245d92;
+      --grey: #595959;
+      --grey-soft: #7a7a7a;
+      --light-blue: #EAF1F8;
+      --light-blue-soft: #F4F8FC;
+      --white: #FFFFFF;
+      --border: rgba(31, 56, 100, 0.10);
+      --shadow-sm: 0 2px 8px rgba(31, 56, 100, 0.06);
+      --shadow-md: 0 12px 32px rgba(31, 56, 100, 0.10);
+      --shadow-lg: 0 24px 60px rgba(31, 56, 100, 0.14);
+      --radius: 14px;
+      --radius-lg: 20px;
+      --nav-height: 72px;
+      --max-width: 1160px;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--grey);
+      line-height: 1.65;
+      font-size: 17px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    h1, h2, h3, h4 {
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); font-weight: 800; letter-spacing: -0.03em; }
+    h2 { font-size: clamp(1.75rem, 3.4vw, 2.5rem); }
+    h3 { font-size: 1.25rem; font-weight: 600; }
+    p { margin: 0; }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-hover); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; width: 100%;
+      height: var(--nav-height);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex; align-items: center;
+    }
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 32px;
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .logo-mark {
+      width: 32px; height: 32px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.95rem;
+    }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+    .nav-cta:hover { background: var(--navy-deep); color: var(--white); transform: translateY(-1px); }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 24px rgba(46, 117, 182, 0.28);
+    }
+    .btn-primary:hover {
+      background: var(--blue-hover);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(46, 117, 182, 0.36);
+    }
+    .btn-primary svg { width: 18px; height: 18px; }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 1rem;
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 3px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+    .btn-secondary:hover { color: var(--blue); border-color: var(--navy); }
+    .btn-secondary svg { width: 16px; height: 16px; }
+
+    /* SECTIONS */
+    section { padding: 96px 0; position: relative; }
+    section.light-blue { background: var(--light-blue); }
+    section.soft { background: var(--light-blue-soft); }
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 18px;
+    }
+    .lead {
+      font-size: 1.18rem;
+      color: var(--grey);
+      line-height: 1.7;
+      max-width: 720px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: calc(var(--nav-height) + 88px) 0 96px;
+      background:
+        radial-gradient(1100px 540px at 85% -10%, rgba(46, 117, 182, 0.10), transparent 60%),
+        radial-gradient(900px 420px at 0% 100%, rgba(31, 56, 100, 0.06), transparent 60%),
+        var(--white);
+      overflow: hidden;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--white);
+      color: var(--navy);
+      padding: 12px 22px 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.005em;
+      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 14px rgba(31, 56, 100, 0.08);
+    }
+    .hero-tag .free-pill {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    @media (max-width: 560px) {
+      .hero-tag { font-size: 0.92rem; padding: 10px 16px 10px 10px; gap: 10px; }
+      .hero-tag .free-pill { font-size: 0.66rem; padding: 3px 8px; }
+    }
+    .hero h1 { margin-bottom: 22px; }
+    .hero .subhead {
+      font-size: 1.2rem;
+      color: var(--grey);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 560px;
+    }
+    .hero-cta-row {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 18px;
+    }
+    .hero-cta-note {
+      font-size: 0.92rem;
+      color: var(--grey-soft);
+      max-width: 360px;
+    }
+    .hero-cta-note strong { color: var(--navy); font-weight: 600; }
+
+    /* HERO VISUAL — readiness scoreboard */
+    .hero-visual {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      max-width: 480px;
+      margin-left: auto;
+      justify-self: end;
+    }
+    .hero-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 22px 24px;
+      border: 1px solid var(--border);
+    }
+    .hero-card-main {
+      top: 4%; left: 6%;
+      width: 84%;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      border: none;
+      z-index: 1;
+    }
+    .hero-card-main .label {
+      font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+      opacity: 0.7; margin-bottom: 16px; font-weight: 600;
+    }
+    .pillar-row {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 14px;
+    }
+    .pillar-row:last-child { margin-bottom: 0; }
+    .pillar-row .pname {
+      width: 70px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .pillar-row .ptrack {
+      flex: 1; height: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .pillar-row .pfill {
+      display: block; height: 100%;
+      background: linear-gradient(90deg, #8BB6DD, #FFFFFF);
+      border-radius: 999px;
+    }
+    .pillar-row .pscore {
+      width: 38px; text-align: right;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--white);
+      opacity: 0.95;
+    }
+
+    .hero-card-stat {
+      bottom: 6%; right: 0;
+      width: 58%;
+      animation: float 6s ease-in-out infinite;
+      z-index: 3;
+    }
+    .hero-card-stat .num {
+      font-size: 1.7rem; font-weight: 800; color: var(--navy);
+      line-height: 1.1; margin-bottom: 6px; letter-spacing: -0.02em;
+    }
+    .hero-card-stat .desc {
+      font-size: 0.88rem; color: var(--grey); line-height: 1.5;
+    }
+
+    .hero-card-mini {
+      top: 56%; left: 0;
+      width: 44%;
+      animation: float 7s ease-in-out infinite reverse;
+      animation-delay: 1s;
+      z-index: 2;
+      padding: 18px 20px;
+    }
+    .hero-card-mini .label-small {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--blue); font-weight: 600; margin-bottom: 10px;
+    }
+    .hero-card-mini .badge-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.85rem; font-weight: 600; color: var(--navy);
+    }
+    .hero-card-mini .badge-row svg {
+      width: 18px; height: 18px; color: var(--blue);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* REAL TALK */
+    .realtalk { background: var(--white); }
+    .realtalk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .realtalk h2 { margin-bottom: 0; }
+    .realtalk p {
+      font-size: 1.12rem;
+      line-height: 1.75;
+      color: var(--grey);
+      margin-bottom: 24px;
+    }
+    .realtalk p:last-child { margin-bottom: 0; }
+    .realtalk p strong { color: var(--navy); font-weight: 600; }
+
+    /* WHY READINESS */
+    .why-readiness {
+      text-align: center;
+    }
+    .why-readiness h2 { margin: 0 auto 24px; max-width: 760px; }
+    .why-readiness p { font-size: 1.18rem; max-width: 760px; margin: 0 auto; line-height: 1.7; }
+    .why-readiness p strong { color: var(--navy); font-weight: 600; }
+
+    /* THREE PILLARS */
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 56px;
+    }
+    .section-head h2 { margin-bottom: 16px; }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .pillar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+      position: relative;
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(46, 117, 182, 0.3);
+    }
+    .pillar-card .pillar-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      background: var(--light-blue);
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+    .pillar-card .pillar-icon svg { width: 28px; height: 28px; }
+    .pillar-card h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--navy);
+    }
+    .pillar-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--grey);
+    }
+
+    /* HOW IT WORKS — FREE + ONLINE */
+    .how-it-works {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .how-it-works::before {
+      content: '';
+      position: absolute;
+      top: -20%; right: -10%;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(46, 117, 182, 0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .how-it-works .container { position: relative; z-index: 1; }
+    .how-it-works .eyebrow { color: #8BB6DD; }
+    .how-it-works h2 { color: var(--white); max-width: 800px; margin-bottom: 28px; }
+    .how-it-works .body-copy {
+      font-size: 1.18rem;
+      line-height: 1.75;
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 20px;
+    }
+    .how-it-works .body-copy:last-child { margin-bottom: 0; }
+    .how-it-works .pill-row {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-top: 36px;
+    }
+    .how-it-works .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--white);
+    }
+    .how-it-works .pill svg { width: 16px; height: 16px; color: #8BB6DD; }
+
+    /* WALK AWAY — CHECKLIST */
+    .checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 40px;
+      max-width: 1000px;
+    }
+    .checklist-item {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 4px 0;
+    }
+    .checklist-item .tick {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      display: inline-flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .checklist-item .tick svg { width: 14px; height: 14px; }
+    .checklist-item p {
+      font-size: 1.05rem;
+      color: var(--grey);
+      line-height: 1.55;
+    }
+    .checklist-item p strong { color: var(--navy); font-weight: 600; }
+
+    /* WORKSHOP HAND-OFF */
+    .handoff { background: var(--light-blue); }
+    .handoff-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 36px;
+      align-items: center;
+    }
+    .handoff-card .handoff-icon {
+      width: 72px; height: 72px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 18px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .handoff-card .handoff-icon svg { width: 36px; height: 36px; }
+    .handoff-card .handoff-body .label {
+      font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue); font-weight: 600; margin-bottom: 8px;
+    }
+    .handoff-card h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+    }
+    .handoff-card p {
+      font-size: 1.02rem;
+      color: var(--grey);
+      line-height: 1.6;
+      max-width: 580px;
+    }
+    .handoff-card p strong { color: var(--navy); font-weight: 600; }
+
+    /* WHY BBD */
+    .whybbd { text-align: left; }
+    .whybbd .grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .whybbd p { font-size: 1.12rem; line-height: 1.75; margin-bottom: 24px; }
+    .whybbd p:last-of-type { margin-bottom: 0; }
+    .whybbd p strong { color: var(--navy); font-weight: 600; }
+    .credentials {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+    .credentials h4 {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 24px;
+    }
+    .credentials ul {
+      list-style: none;
+      display: grid;
+      gap: 18px;
+    }
+    .credentials li {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .credentials li .badge {
+      width: 36px; height: 36px;
+      background: var(--light-blue);
+      color: var(--navy);
+      border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .credentials li .badge svg { width: 18px; height: 18px; }
+
+    /* CLOSING CTA */
+    .closing {
+      background: linear-gradient(135deg, var(--light-blue) 0%, var(--light-blue-soft) 100%);
+      text-align: center;
+    }
+    .closing-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .closing h2 { margin-bottom: 20px; }
+    .closing p {
+      font-size: 1.2rem;
+      color: var(--grey);
+      line-height: 1.65;
+      margin-bottom: 40px;
+    }
+    .closing .contact {
+      margin-top: 40px;
+      font-size: 0.95rem;
+      color: var(--grey-soft);
+    }
+    .closing .contact strong { color: var(--navy); font-weight: 600; }
+    .closing .contact a { color: var(--blue); }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 0 36px;
+      font-size: 0.92rem;
+    }
+    footer .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px;
+    }
+    footer .logo { color: var(--white); }
+    footer .logo .logo-mark { background: var(--white); color: var(--navy); }
+    footer .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
+    footer a { color: rgba(255, 255, 255, 0.78); }
+    footer a:hover { color: var(--white); }
+    footer .copyright { font-size: 0.86rem; opacity: 0.6; width: 100%; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 8px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      section { padding: 72px 0; }
+      .hero { padding: calc(var(--nav-height) + 56px) 0 64px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { max-width: 380px; margin: 0 auto; justify-self: center; }
+      .realtalk-grid { grid-template-columns: 1fr; gap: 32px; }
+      .pillars { grid-template-columns: 1fr; }
+      .checklist { grid-template-columns: 1fr; }
+      .whybbd .grid { grid-template-columns: 1fr; gap: 40px; }
+      .handoff-card { grid-template-columns: 1fr; text-align: left; gap: 24px; padding: 36px; }
+      .handoff-card .handoff-icon { width: 60px; height: 60px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .container { padding: 0 20px; }
+      .nav-inner { padding: 0 20px; }
+      .nav-cta { padding: 9px 14px; font-size: 0.84rem; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero .subhead { font-size: 1.05rem; }
+      .btn-primary { padding: 14px 26px; font-size: 1rem; }
+      .pillar-card { padding: 28px 24px; }
+      .credentials { padding: 24px; }
+      footer .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">B</span>
+        <span>BBD Boom</span>
+      </a>
+      <a href="https://www.bbdboom.com/meetings/adamlewis/video-call-on-inbound-with-adam-lewis-30-mins?uuid=b78dc4c3-5ce3-4f7b-9e81-1a554194c9f6" class="nav-cta">
+        Book your free review
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-tag">
+            <span class="free-pill">Free</span>
+            AI Readiness Review
+          </span>
+          <h1>Are you actually ready for AI?</h1>
+          <p class="subhead">A free, online AI Readiness Review. We look at your tech stack and your HubSpot across the three things that really decide it. Your process, your data, and your tools. And tell you honestly where you stand.</p>
+          <div class="hero-cta-row">
+            <a href="https://www.bbdboom.com/meetings/adamlewis/video-call-on-inbound-with-adam-lewis-30-mins?uuid=b78dc4c3-5ce3-4f7b-9e81-1a554194c9f6" class="btn-primary">
+              Book your free review
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <p class="hero-cta-note"><strong>Free · online · no obligation.</strong></p>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card hero-card-main">
+            <div class="label">AI Readiness</div>
+            <div class="pillar-row">
+              <span class="pname">Process</span>
+              <span class="ptrack"><i class="pfill" style="width: 58%"></i></span>
+              <span class="pscore">58%</span>
+            </div>
+            <div class="pillar-row">
+              <span class="pname">Data</span>
+              <span class="ptrack"><i class="pfill" style="width: 42%"></i></span>
+              <span class="pscore">42%</span>
+            </div>
+            <div class="pillar-row">
+              <span class="pname">Tools</span>
+              <span class="ptrack"><i class="pfill" style="width: 71%"></i></span>
+              <span class="pscore">71%</span>
+            </div>
+          </div>
+
+          <div class="hero-card hero-card-mini">
+            <div class="label-small">Honest read</div>
+            <div class="badge-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              No fluff
+            </div>
+          </div>
+
+          <div class="hero-card hero-card-stat">
+            <div class="num">Free &amp; online</div>
+            <div class="desc">A short call. No five-week engagement, no big invoice.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL TALK -->
+  <section class="realtalk">
+    <div class="container">
+      <div class="realtalk-grid">
+        <div>
+          <span class="eyebrow">The real talk</span>
+          <h2>AI doesn't fix a shaky foundation. It amplifies it.</h2>
+        </div>
+        <div>
+          <p>Everyone's being told to "do something with AI." But here's the bit nobody says out loud: <strong>AI doesn't fix a shaky foundation</strong>, it amplifies it. Point it at messy data or an undocumented process and it'll surface the mess faster than any audit ever could, in front of your team.</p>
+          <p>Most businesses jump to the tools before they're ready. This is a free, honest look at whether you actually are. Before you spend a penny on anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY READINESS -->
+  <section class="why-readiness light-blue">
+    <div class="container">
+      <span class="eyebrow">Why readiness comes first</span>
+      <h2>The tools are rarely the hard part. The foundation underneath them is.</h2>
+      <p>Get that right first and AI lands on things your systems can actually deliver. Skip it, and you don't avoid the risk, you just defer it, then quietly conclude <strong>"AI doesn't work for us."</strong> It usually wasn't the AI.</p>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we look at</span>
+        <h2>The three things that really decide it.</h2>
+      </div>
+      <div class="pillars">
+        <div class="pillar-card">
+          <span class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <h3>Process</h3>
+          <p>Are your workflows clear and consistent enough for AI to plug into? Undocumented, fragmented processes mean AI just amplifies the chaos.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          </span>
+          <h3>Data</h3>
+          <p>Is your CRM data clean, structured and trustworthy? AI is only ever as good as the data underneath it. Messy records in, messy results out.</p>
+        </div>
+        <div class="pillar-card">
+          <span class="pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <h3>Tools</h3>
+          <p>Is your stack, HubSpot and everything around it, set up to support AI safely? Fragmented tools and shadow AI create cost and risk before they create value.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <span class="eyebrow">How it works</span>
+      <h2>It's free, and it's online.</h2>
+      <p class="body-copy">A short call where we review your tech stack and your HubSpot AI readiness across those three pillars, then come back to you with clear, honest recommendations.</p>
+      <p class="body-copy">No five-week engagement. No big invoice. Just a sensible, no-pressure place to start.</p>
+      <div class="pill-row">
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Free
+        </span>
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Online
+        </span>
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          No obligation
+        </span>
+        <span class="pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Honest answer
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALK AWAY -->
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What you walk away with</span>
+        <h2>An honest read. Clear next steps. No pressure.</h2>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p>An honest read on where you stand across <strong>process, data and tools</strong>.</p>
+        </div>
+        <div class="checklist-item">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p>The specific gaps holding you back.</p>
+        </div>
+        <div class="checklist-item">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p>Clear recommendations on what to fix first, and where AI could genuinely help you now.</p>
+        </div>
+        <div class="checklist-item">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+          <p>A sensible next step, with no obligation to take it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSHOP HAND-OFF -->
+  <section class="handoff">
+    <div class="container">
+      <div class="handoff-card">
+        <div class="handoff-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="handoff-body">
+          <div class="label">Where it leads</div>
+          <h3>Ready? The next step is the AI Activation Workshop.</h3>
+          <p>If the review shows you're ready, the natural next step is our one-day <strong>AI Activation Workshop</strong> where we get hands-on inside your own HubSpot and switch your first use case on. The review tells you where you stand; the workshop puts it into action.</p>
+        </div>
+        <div>
+          <a href="https://workshop.bbdboom.com" class="btn-secondary">
+            See the AI Activation Workshop
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BBD BOOM -->
+  <section class="whybbd">
+    <div class="container">
+      <div class="grid">
+        <div>
+          <span class="eyebrow">Why BBD Boom</span>
+          <h2>We run this on ourselves first.</h2>
+          <p style="margin-top: 28px;">HubSpot Elite Partner, part of Siloy, Europe's leading HubSpot ecosystem.</p>
+          <p>We're not theorising about AI readiness. We run this on our own HubSpot, including the <strong>data agent (Breeze)</strong> to keep our own CRM clean. We bring what actually works (and what doesn't) into the conversation.</p>
+        </div>
+
+        <div class="credentials">
+          <h4>Credentials</h4>
+          <ul>
+            <li>
+              <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15 2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9.5-5-2-8.5-4.5-8.5-9.5V5l8.5-3 8.5 3z"/></svg></span>
+              HubSpot Elite Partner
+            </li>
+            <li>
+              <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span>
+              Part of Siloy
+            </li>
+            <li>
+              <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              225+ HubSpot professionals across 9 countries
+            </li>
+            <li>
+              <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+              2,000+ implementations
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="closing">
+    <div class="container">
+      <div class="closing-inner">
+        <h2>Find out where you really stand.</h2>
+        <p>A free, online review. No cost, no obligation. Just an honest answer on whether you're ready and what to do first.</p>
+        <a href="https://www.bbdboom.com/meetings/adamlewis/video-call-on-inbound-with-adam-lewis-30-mins?uuid=b78dc4c3-5ce3-4f7b-9e81-1a554194c9f6" class="btn-primary">
+          Book your free review
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <div class="contact">
+          <strong>Adam Lewis</strong>, Commercial Director, BBD Boom · <a href="mailto:adam@bbdboom.com">adam@bbdboom.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="https://www.bbdboom.com" class="logo">
+          <span class="logo-mark">B</span>
+          <span>BBD Boom</span>
+        </a>
+        <div class="footer-links">
+          <a href="https://www.bbdboom.com">bbdboom.com</a>
+          <a href="https://workshop.bbdboom.com">AI Activation Workshop</a>
+          <a href="https://www.bbdboom.com/contact">Contact</a>
+        </div>
+        <div class="copyright">
+          &copy; <span id="year"></span> BBD Boom. HubSpot Elite Partner, part of Siloy.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
